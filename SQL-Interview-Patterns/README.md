@@ -1,5 +1,5 @@
 # SQL Interview Patterns for Data Engineers
-    Familiarity with many of the SQL patterns ensures Data Engineers can handle not just common tasks but also intricate and unexpected challenges that might arise in real-world data Engineering Roles.
+- Familiarity with many of the SQL patterns ensures Data Engineers can handle not just common tasks but also intricate and unexpected challenges that might arise in real-world data Engineering Roles.
 
 ## Understanding CTEs and Rolling Windows:
 - A common Table Expression(CTE) is a temporary  result set that you can refer to within a SELECT, INSERT, UPDATE, DELETE statement.
@@ -7,22 +7,22 @@
 - When used in combination with BETWEEN, It also can be used to create rolling windows.
 - In the given  SQL, We are attempting to calculate the average daily active users over a rolling Window of 3 days :
 
-WITH cte_dau AS (
-  SELECT 
-    event_date AS day,
-    COUNT(DISTINCT userid) as dau
-  FROM user_activity_log
-  GROUP BY event_date
-  ORDER BY 1
-)
-SELECT 
-  a.day,
-  AVG(b.dau) AS "3_day_dau_avg"
-FROM cte_dau a
-INNER JOIN cte_dau b
-  ON b.day BETWEEN a.day - INTERVAL '3' DAY AND a.day
-GROUP BY a.day
-ORDER BY a.day;
+    WITH cte_dau AS (
+    SELECT 
+        event_date AS day,
+        COUNT(DISTINCT userid) as dau
+    FROM user_activity_log
+    GROUP BY event_date
+    ORDER BY 1
+    )
+    SELECT 
+    a.day,
+    AVG(b.dau) AS "3_day_dau_avg"
+    FROM cte_dau a
+    INNER JOIN cte_dau b
+    ON b.day BETWEEN a.day - INTERVAL '3' DAY AND a.day
+    GROUP BY a.day
+    ORDER BY a.day;
 
 The BreakDown :
 1. CTE Definition('cte_dau'):
@@ -47,14 +47,14 @@ The BreakDown :
 - Essential, you are telling the SQL Engine to sum up values only when certain conditions are met.
 - The aim is to calculate the percentage of sales that happened on the first and last day of promotion.
 
-SELECT ROUND(Sum(
-  CASE WHEN Min(start_date) = transaction_date THEN 1
-       WHEN Max(end_date) = transaction_date THEN 1
-       ELSE 0
-  END) 100 / Count(), 2)
-FROM sales s
-JOIN promotions p
-ON s.promotion_id = p.promotion_id;
+    SELECT ROUND(Sum(
+    CASE WHEN Min(start_date) = transaction_date THEN 1
+        WHEN Max(end_date) = transaction_date THEN 1
+        ELSE 0
+    END) 100 / Count(), 2)
+    FROM sales s
+    JOIN promotions p
+    ON s.promotion_id = p.promotion_id;
 
 The Breakdown:
 1. The CASE Statement :
@@ -82,12 +82,12 @@ The Breakdown:
 - The combination of SUM with a CASE statement and COUNT(*) is frequently used in SQL for deriving proportions or percentages based on specific criteria.
 - We can use this pattern to solve a problem such as What is the proportion of valid sales that occured on Jan 1 2021. 
 
-SELECT
-SUM(CASE WHEN transaction_date = '2021-01-01' THEN 1 ELSE 0 END)
-/
-COUNT(*) AS proportion
-FROM sales
-WHERE is_valid = true;
+    SELECT
+    SUM(CASE WHEN transaction_date = '2021-01-01' THEN 1 ELSE 0 END)
+    /
+    COUNT(*) AS proportion
+    FROM sales
+    WHERE is_valid = true;
 
 1. The CASE Statement :
 - The case statement inspects each row's transaction_date.
