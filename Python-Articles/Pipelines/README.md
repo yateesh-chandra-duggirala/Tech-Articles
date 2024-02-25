@@ -9,7 +9,7 @@
     d. Calculate the average of the resulting numbers.
 
 ## Method 1 :
-- One way to do this is to write a loop that iterates over the list and applies each operation one by one, storing the intermediate results in a new list. Refer method1.py file
+- One way to do this is to write a loop that iterates over the list and applies each operation one by one, storing the intermediate results in a new list. Refer [method1.py](https://github.com/yateesh-chandra-duggirala/Tech-Articles/blob/python-article/Python-Articles/Pipelines/method1.py) file
 - Actually this code works, but it is not very elegant or efficient. It creates three new lists, which takes up memory and make the code less readable, which requires writing 4 loops,  which can be tedious and error-prone.
 
 ## Method 2 :
@@ -17,7 +17,7 @@
 - A pipeline allows you to chain the operations together, without creating intermediate lists or loops.
 - You can use the built-in map and filter functions, which take a function and an iterable as arguments, and return a new iterable that applies the function to each element of the original iterable.
 - You can also use the sum and len functions, which calculate the sum and the length of an iterable, respectively.
-- Refer the method2.py file
+- Refer the [method2.py](https://github.com/yateesh-chandra-duggirala/Tech-Articles/blob/python-article/Python-Articles/Pipelines/method2.py) file
 - This code is much shorter and simpler than the previous one.
 - It does not create any new lists or loops and it is easy to see the flow of data from one operation to the next.
 - However, It is still not very readable, as it uses nested map and filter calls, which can be confusing and hard to follow.
@@ -25,7 +25,7 @@
 ## Method 3:
 - A more readable way to write a pipeline is to use the pipe function from the toolz library.
 - The pipe function takes an initial value and a series of functions, and applies each function to the output of the previous one, returning the final result.
-- Refer method3.py file
+- Refer [Method3.py](https://github.com/yateesh-chandra-duggirala/Tech-Articles/blob/python-article/Python-Articles/Pipelines/method3.py) file
 - This code is much more readable and elegant than the previous ones. It clearly shows the sequence of operations that are applied to the data, and it does not use any nested calls or intermediate lists.
 - The pipe function makes the code look like a pipeline, where the data flows from one function to the next.
 
