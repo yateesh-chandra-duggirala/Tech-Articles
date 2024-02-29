@@ -1,48 +1,3 @@
-/*Data for the table regions */
-
-INSERT INTO regions(region_id,region_name) VALUES (1,'Europe');
-INSERT INTO regions(region_id,region_name) VALUES (2,'Americas');
-INSERT INTO regions(region_id,region_name) VALUES (3,'Asia');
-INSERT INTO regions(region_id,region_name) VALUES (4,'Middle East and Africa');
-
-
-/*Data for the table countries */
-INSERT INTO countries(country_id,country_name,region_id) VALUES ('AR','Argentina',2);
-INSERT INTO countries(country_id,country_name,region_id) VALUES ('AU','Australia',3);
-INSERT INTO countries(country_id,country_name,region_id) VALUES ('BE','Belgium',1);
-INSERT INTO countries(country_id,country_name,region_id) VALUES ('BR','Brazil',2);
-INSERT INTO countries(country_id,country_name,region_id) VALUES ('CA','Canada',2);
-INSERT INTO countries(country_id,country_name,region_id) VALUES ('CH','Switzerland',1);
-INSERT INTO countries(country_id,country_name,region_id) VALUES ('CN','China',3);
-INSERT INTO countries(country_id,country_name,region_id) VALUES ('DE','Germany',1);
-INSERT INTO countries(country_id,country_name,region_id) VALUES ('DK','Denmark',1);
-INSERT INTO countries(country_id,country_name,region_id) VALUES ('EG','Egypt',4);
-INSERT INTO countries(country_id,country_name,region_id) VALUES ('FR','France',1);
-INSERT INTO countries(country_id,country_name,region_id) VALUES ('HK','HongKong',3);
-INSERT INTO countries(country_id,country_name,region_id) VALUES ('IL','Israel',4);
-INSERT INTO countries(country_id,country_name,region_id) VALUES ('IN','India',3);
-INSERT INTO countries(country_id,country_name,region_id) VALUES ('IT','Italy',1);
-INSERT INTO countries(country_id,country_name,region_id) VALUES ('JP','Japan',3);
-INSERT INTO countries(country_id,country_name,region_id) VALUES ('KW','Kuwait',4);
-INSERT INTO countries(country_id,country_name,region_id) VALUES ('MX','Mexico',2);
-INSERT INTO countries(country_id,country_name,region_id) VALUES ('NG','Nigeria',4);
-INSERT INTO countries(country_id,country_name,region_id) VALUES ('NL','Netherlands',1);
-INSERT INTO countries(country_id,country_name,region_id) VALUES ('SG','Singapore',3);
-INSERT INTO countries(country_id,country_name,region_id) VALUES ('UK','United Kingdom',1);
-INSERT INTO countries(country_id,country_name,region_id) VALUES ('US','United States of America',2);
-INSERT INTO countries(country_id,country_name,region_id) VALUES ('ZM','Zambia',4);
-INSERT INTO countries(country_id,country_name,region_id) VALUES ('ZW','Zimbabwe',4);
-
-/*Data for the table locations */
-INSERT INTO locations(location_id,street_address,postal_code,city,state_province,country_id) VALUES (1400,'2014 Jabberwocky Rd','26192','Southlake','Texas','US');
-INSERT INTO locations(location_id,street_address,postal_code,city,state_province,country_id) VALUES (1500,'2011 Interiors Blvd','99236','South San Francisco','California','US');
-INSERT INTO locations(location_id,street_address,postal_code,city,state_province,country_id) VALUES (1700,'2004 Charade Rd','98199','Seattle','Washington','US');
-INSERT INTO locations(location_id,street_address,postal_code,city,state_province,country_id) VALUES (1800,'147 Spadina Ave','M5V 2L7','Toronto','Ontario','CA');
-INSERT INTO locations(location_id,street_address,postal_code,city,state_province,country_id) VALUES (2400,'8204 Arthur St',NULL,'London',NULL,'UK');
-INSERT INTO locations(location_id,street_address,postal_code,city,state_province,country_id) VALUES (2500,'Magdalen Centre, The Oxford Science Park','OX9 9ZB','Oxford','Oxford','UK');
-INSERT INTO locations(location_id,street_address,postal_code,city,state_province,country_id) VALUES (2700,'Schwanthalerstr. 7031','80925','Munich','Bavaria','DE');
-
-
 /*Data for the table jobs */
 
 INSERT INTO jobs(job_id,job_title,min_salary,max_salary) VALUES (1,'Public Accountant',4200.00,9000.00);
@@ -126,38 +81,6 @@ INSERT INTO employees(employee_id,first_name,last_name,email,phone_number,hire_d
 INSERT INTO employees(employee_id,first_name,last_name,email,phone_number,hire_date,job_id,salary,manager_id,department_id) VALUES (206,'William','Gietz','william.gietz@sqltutorial.org','515.123.8181','1994-06-07',1,8300.00,205,11);
 
 
-/*Data for the table dependents */
-
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (1,'Penelope','Gietz','Child',206);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (2,'Nick','Higgins','Child',205);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (3,'Ed','Whalen','Child',200);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (4,'Jennifer','King','Child',100);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (5,'Johnny','Kochhar','Child',101);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (6,'Bette','De Haan','Child',102);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (7,'Grace','Faviet','Child',109);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (8,'Matthew','Chen','Child',110);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (9,'Joe','Sciarra','Child',111);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (10,'Christian','Urman','Child',112);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (11,'Zero','Popp','Child',113);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (12,'Karl','Greenberg','Child',108);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (13,'Uma','Mavris','Child',203);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (14,'Vivien','Hunold','Child',103);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (15,'Cuba','Ernst','Child',104);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (16,'Fred','Austin','Child',105);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (17,'Helen','Pataballa','Child',106);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (18,'Dan','Lorentz','Child',107);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (19,'Bob','Hartstein','Child',201);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (20,'Lucille','Fay','Child',202);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (21,'Kirsten','Baer','Child',204);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (22,'Elvis','Khoo','Child',115);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (23,'Sandra','Baida','Child',116);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (24,'Cameron','Tobias','Child',117);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (25,'Kevin','Himuro','Child',118);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (26,'Rip','Colmenares','Child',119);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (27,'Julia','Raphaely','Child',114);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (28,'Woody','Russell','Child',145);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (29,'Alec','Partners','Child',146);
-INSERT INTO dependents(dependent_id,first_name,last_name,relationship,employee_id) VALUES (30,'Sandra','Taylor','Child',176);
 
 INSERT INTO student_score VALUES (11, 'Ibrahim', 'Computer Science', 80);
 INSERT INTO student_score VALUES (7, 'Taiwo', 'Microbiology', 76);
@@ -186,3 +109,8 @@ INSERT INTO ProductSales VALUES
 ('Smith', 9160, 5220, 3360),
 ('David', 9770, 5440, 8800),
 ('James', 9870, 5480, 8900);
+
+
+INSERT INTO employee_info
+	Select employee_id, first_name, email, hire_date from employees
+	limit 15

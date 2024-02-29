@@ -1,30 +1,7 @@
-CREATE TABLE regions (
-	region_id SERIAL PRIMARY KEY,
-	region_name CHARACTER VARYING (25)
-);
-
-CREATE TABLE countries (
-	country_id CHARACTER (2) PRIMARY KEY,
-	country_name CHARACTER VARYING (40),
-	region_id INTEGER NOT NULL,
-	FOREIGN KEY (region_id) REFERENCES regions (region_id) ON UPDATE CASCADE ON DELETE CASCADE
-);
-
-CREATE TABLE locations (
-	location_id SERIAL PRIMARY KEY,
-	street_address CHARACTER VARYING (40),
-	postal_code CHARACTER VARYING (12),
-	city CHARACTER VARYING (30) NOT NULL,
-	state_province CHARACTER VARYING (25),
-	country_id CHARACTER (2) NOT NULL,
-	FOREIGN KEY (country_id) REFERENCES countries (country_id) ON UPDATE CASCADE ON DELETE CASCADE
-);
-
 CREATE TABLE departments (
 	department_id SERIAL PRIMARY KEY,
 	department_name CHARACTER VARYING (30) NOT NULL,
 	location_id INTEGER,
-	FOREIGN KEY (location_id) REFERENCES locations (location_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE jobs (
@@ -50,15 +27,6 @@ CREATE TABLE employees (
 	FOREIGN KEY (manager_id) REFERENCES employees (employee_id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-CREATE TABLE dependents (
-	dependent_id SERIAL PRIMARY KEY,
-	first_name CHARACTER VARYING (50) NOT NULL,
-	last_name CHARACTER VARYING (50) NOT NULL,
-	relationship CHARACTER VARYING (25) NOT NULL,
-	employee_id INTEGER NOT NULL,
-	FOREIGN KEY (employee_id) REFERENCES employees (employee_id) ON DELETE CASCADE ON UPDATE CASCADE
-);
-
 CREATE TABLE student_score (
   student_id SERIAL PRIMARY KEY,
   student_name VARCHAR(30),
@@ -78,4 +46,11 @@ Create Table ProductSales
        India int,
        US int,
        UK int
+);
+
+create table employee_info(
+	employee_id int, 
+	first_name varchar(20) NOT NULL, 
+	email CHARACTER VARYING (100) NOT NULL, 
+	hire_date date NOT NULL
 );
